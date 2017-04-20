@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GridMultiSelectDemo</string>
+    <string name="intentResult">INTENT_RESULT</string>
+</resources>
