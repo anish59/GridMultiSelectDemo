@@ -22,7 +22,7 @@ public class ResultActivity extends AppCompatActivity {
         resultList = getIntent().getStringArrayListExtra(getString(R.string.intentResult));
 
         for (String s : resultList) {
-            msg = msg + "," + s;
+            msg = s + "," + msg;
         }
         txtResult.setText(msg);
     }
