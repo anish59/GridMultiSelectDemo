@@ -17,9 +17,9 @@ import java.util.List;
 public class MainRecyclerView extends AppCompatActivity {
     private Context context = MainRecyclerView.this;
     private List<DemoModel> demoModels;
-    private DemoModel demoModel;
     private RecyclerView recyclerView;
     private RecyclerViewAdapter mAdapter;
+    private boolean isMultiSelectionOn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +32,11 @@ public class MainRecyclerView extends AppCompatActivity {
 
     private void init() {
         initAdapter();
-        getDummydata();
+        getDummyData();
     }
 
     private void initAdapter() {
-        mAdapter = new RecyclerViewAdapter(getDummydata(), context, new RecyclerViewAdapter.OnItemClickListener() {
+        mAdapter = new RecyclerViewAdapter(getDummyData(), context, new RecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onClick(int position, View view) {
                 if (demoModels.get(position).getSelected()) {
@@ -52,7 +52,7 @@ public class MainRecyclerView extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
     }
 
-    private List<DemoModel> getDummydata() {
+    private List<DemoModel> getDummyData() {
         demoModels = new ArrayList<>();
         for (int i = 0; i <= 30; i++) {
             demoModels.add(new DemoModel("UserName" + String.valueOf(i), false));
